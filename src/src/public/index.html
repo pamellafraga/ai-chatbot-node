@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chatbot JS + AI</title>
+</head>
+<body style="font-family: system-ui; max-width: 720px; margin: 40px auto;">
+  <h1>Chatbot (Node.js + OpenAI)</h1>
+  <p>Digite sua pergunta:</p>
+  <textarea id="msg" rows="4" style="width:100%"></textarea>
+  <button id="send">Enviar</button>
+  <pre id="out" style="background:#111;color:#eee;padding:12px;min-height:120px;margin-top:16px;"></pre>
+
+  <script>
+    const msg = document.getElementById('msg');
+    const out = document.getElementById('out');
+    document.getElementById('send').onclick = async () => {
+      out.textContent = 'Consultando...';
+      const r = await fetch('/chat', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ message: msg.value })
+      });
+      const j = await r.json();
+      out.textContent = j.answer || JSON.stringify(j, null, 2);
+    };
+  </script>
+</body>
+</html>
