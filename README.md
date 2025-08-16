@@ -10,4 +10,26 @@
   Chatbot construído com <b>Node.js</b> integrado à <b>API da OpenAI</b>.  
   Possui três formas de uso:
   <br/>
-  🖥️ <b>CLI (linha de co
+  🖥️ <b>CLI (linha de comando)</b>  
+  🌐 <b>REST API</b>  
+  💻 <b>Interface Web simples</b>
+</p>
+
+---
+
+## ✨ Funcionalidades
+- Conversa direta via terminal (CLI).  
+- API REST com endpoint `/chat`.  
+- Página web para testar no navegador.  
+- Fácil de rodar no **GitHub Codespaces** (não precisa instalar nada).  
+
+---
+
+## 🚀 Como rodar no GitHub Codespaces
+1. Clique em **Code → Create Codespace on Main**.  
+2. Aguarde instalar dependências (feito automaticamente).  
+3. Configure a chave da OpenAI em **Settings → Secrets → Codespaces**:  
+   - `OPENAI_API_KEY=SUACHAVEAQUI`  
+4. No terminal, rode:  
+   ```bash
+   npm run dev:api
