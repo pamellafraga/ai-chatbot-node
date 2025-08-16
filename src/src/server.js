@@ -1,10 +1,11 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import { askAI } from './ai.js';
 
 const app = express();
+app.use(cors());            // <— habilita CORS
 app.use(express.json());
-app.use(express.static('public'));
 
 app.get('/health', (_, res) => res.json({ ok: true }));
 
