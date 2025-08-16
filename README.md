@@ -1,10 +1,13 @@
-# AI Chatbot (Node.js + OpenAI)
-- Rodar no Codespaces (sem instalar nada).
-- Teste em `/` (form) e endpoint `POST /chat`.
+<h1 align="center">🤖 AI Chatbot — Node.js + OpenAI</h1>
 
-## Scripts
-- `npm run dev:api` — inicia o servidor (porta 3000).
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-20.x-green?style=for-the-badge&logo=node.js" />
+  <img src="https://img.shields.io/badge/OpenAI-API-blue?style=for-the-badge&logo=openai" />
+  <img src="https://img.shields.io/badge/Status-Working-success?style=for-the-badge" />
+</p>
 
-## Variáveis
-- `OPENAI_API_KEY` (obrigatória)
-- `MODEL` (opcional, padrão: `gpt-4o-mini`)
+<p align="center">
+  Chatbot construído com <b>Node.js</b> integrado à <b>API da OpenAI</b>.  
+  Possui três formas de uso:
+  <br/>
+  🖥️ <b>CLI (linha de co
