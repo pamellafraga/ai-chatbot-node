@@ -13,16 +13,26 @@
   <pre id="out" style="background:#111;color:#eee;padding:12px;min-height:120px;margin-top:16px;"></pre>
 
   <script>
-    const msg = document.getElementById('msg');
-    const out = document.getElementById('out');
+    // Obtém referências aos elementos da interface
+    const msg = document.getElementById('msg'); // textarea onde o usuário digita a pergunta
+    const out = document.getElementById('out'); // área onde a resposta será exibida
+
+    // Define ação ao clicar no botão "Enviar"
     document.getElementById('send').onclick = async () => {
+      // Exibe mensagem de carregamento enquanto consulta a API
       out.textContent = 'Consultando...';
+
+      // Envia a mensagem digitada para a API do backend
       const r = await fetch('/chat', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ message: msg.value })
       });
+
+      // Aguarda a resposta da API e converte para JSON
       const j = await r.json();
+
+      // Exibe a resposta da IA ou o erro retornado
       out.textContent = j.answer || JSON.stringify(j, null, 2);
     };
   </script>
